@@ -6,16 +6,18 @@ Ejemplos:
 •	Fibonacci(2) = 1 (0 + 1)
 •	Fibonacci(3) = 2 (1 + 1)
 •	Fibonacci(4) = 3 (1 + 2)
-•	Fibonacci(5) = 5 (2 + 3)
-•	Fibonacci(6) = 8 (3 + 5)
-•	Fibonacci(7) = 13 (5 + 8)
-•	Fibonacci(8) = 21 (8 + 13)
  */
 function fibonacci(n) {
+  /*Si n es menor o igual a 1, la función simplemente devuelve n.
+Esto funciona porque en la secuencia de Fibonacci: Fibonacci(0) es 0, Fibonacci(1) es 1, Fibonacci(2) es 1, y así sucesivamente.
+Entonces, si n es 0 o 1, la función no necesita hacer más cálculos, simplemente devuelve el valor de n. */
   if (n <= 1) return n;
+
+  /*Si n es mayor que 1, la función llama a sí misma dos veces: una con n - 2 y otra con n - 1. Esto sigue la definición de Fibonacci, donde:
+Fibonacci(n) = Fibonacci(n - 1) + Fibonacci(n - 2)
+La función suma los resultados de estos dos llamados recursivos. */
   return fibonacci(n - 2) + fibonacci(n - 1);
 }
-
 console.log(fibonacci(3));
 
 /*--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -25,8 +27,19 @@ Ejemplos:
 •	Factorial(3) = 3 × 2 × 1 = 6
 •	Factorial(5) = 5 × 4 × 3 × 2 × 1 = 120
 */
+
 function factorial(n) {
+  /*Si n es menor o igual a 1, la función devuelve 1. Esto se debe a que:
+0! (factorial de 0) es 1 (por definición).
+1! (factorial de 1) también es 1.
+Entonces, cuando n es 0 o 1, no es necesario hacer más cálculos, simplemente devolvemos 1 */
+
   if (n <= 1) return 1;
+  /*Si n es mayor que 1, la función llama a sí misma con n - 1 y multiplica el resultado por n.
+Esto sigue la fórmula del factorial:
+n! = n × (n - 1)!
+La función multiplica n por el resultado de factorial(n - 1) hasta que llega al caso base (cuando n <= 1) */
+
   return n * factorial(n - 1);
 }
 
